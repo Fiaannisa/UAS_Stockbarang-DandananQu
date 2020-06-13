@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import {
     Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button
@@ -13,7 +14,17 @@ function CardComp(props) {
                     <CardTitle><h3>{props.judul}</h3></CardTitle>
                     <CardSubtitle>{props.tanggal}</CardSubtitle>
                     <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                    <Button>Detail</Button>
+                    <Button>
+                        <Link to = {
+                            {
+                                pathname : `/detail/${props.id}`,
+                                state : {
+                                    judul: props.judul,
+                                    tanggal: props.tanggal
+                                }
+                            }
+                        }>Detail</Link>
+                        </Button>
                 </CardBody>
             </Card>
         </div>

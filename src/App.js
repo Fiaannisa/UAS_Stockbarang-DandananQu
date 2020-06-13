@@ -9,6 +9,7 @@ import AboutComp from './Component/Fungsional/AboutComp';
 import HomePage from './Component/Fungsional/HomePage';
 import About from './Component/Fungsional/AboutComp';
 import { Form } from 'reactstrap';
+import DetailComp from './Component/Fungsional/DetailComp';
 //import './App.css';
 
 const App = () => {
@@ -18,7 +19,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/about" component={About} />
-
+        <Route exact path="/detail/:id" component={DetailComp} />
       </Switch>
     </BrowserRouter>
 
