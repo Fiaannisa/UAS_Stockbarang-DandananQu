@@ -5,6 +5,7 @@ import {
     CardTitle, CardSubtitle, Button
 } from 'reactstrap';
 
+//video 28
 function CardComp(props) {
     return (
         <div>
