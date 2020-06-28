@@ -14,6 +14,7 @@ import ListComp from './Component/Class/ListComp';
 import TambahComp from './Component/Class/TambahComp';
 import EditComp from './Component/Class/EditComp';
 import KelasComp from './Component/Hooks/Class/KelasComp';
+import HooksComp from './Component/Hooks/Fungsional/HooksComp';
 //import './App.css';
 
 const App = () => {
@@ -27,6 +28,8 @@ const App = () => {
         <Route exact path="/mahasiswa/tambah" component={TambahComp} />
         <Route exact path="/mahasiswa/edit" component={EditComp} />
         <Route exact path="/kelas" component={KelasComp} />
+        <Route exact path="/hooks" component={HooksComp} />
+
         {/*<Route exact path="/detail/:id" component={DetailComp} /> */}
       </Switch>
     </BrowserRouter>
