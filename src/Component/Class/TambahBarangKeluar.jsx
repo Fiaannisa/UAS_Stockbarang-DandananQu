@@ -4,7 +4,7 @@ import { Button, Container, Col, Alert, Row, Form, FormGroup, Label, Input } fro
 import { Link } from 'react-router-dom'
 
 const api = 'http://localhost:3001'
-
+//form tambah barang keluar
 class TambahBarangKeluar extends PureComponent {
     constructor(props) {
         super(props)
