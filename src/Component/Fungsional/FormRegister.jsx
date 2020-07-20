@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom'
 
 const api = 'http://localhost:3001'
 
+
+//form register
+
 class FormRegister extends PureComponent {
     constructor(props) {
         super(props)
