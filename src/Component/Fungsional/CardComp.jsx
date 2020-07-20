@@ -5,7 +5,7 @@ import {
     CardSubtitle, CardBody
 } from 'reactstrap';
 
-//video 28
+//engga di pakai
 function CardComp(props) {
     return (
         <div>
