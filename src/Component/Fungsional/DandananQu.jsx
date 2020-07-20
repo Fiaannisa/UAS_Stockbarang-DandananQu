@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Col, Card, CardTitle, Row, CardText, CardImg, Collapse, CardBody, NavLink, ListGroup, ListGroupItem, UncontrolledCarousel, Container } from 'reactstrap'
 import './CSS/Blog.css';
 
-
+//form tampil produk berdasarkan merk
 
 function DandananQu(props) {
     return (
