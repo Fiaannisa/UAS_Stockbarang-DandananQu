@@ -6,7 +6,7 @@ import { Container, Col, Row, Form, FormGroup, Alert, Label, Input, Button } fro
 
 
 const api = "http://localhost:3001"
-
+//tampilan edit karyawan
 class EditKaryawan extends PureComponent {
     constructor(props) {
         super(props)
