@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import './CSS/barang.css';
 
 const api = 'http://localhost:3001'
-
+//tampil berdasarkan merk-nyx
 class NYX extends PureComponent {
     constructor(props) {
         super(props)
