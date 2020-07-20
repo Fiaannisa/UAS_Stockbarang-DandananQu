@@ -2,7 +2,7 @@ import React from 'react'
 import { Media } from 'reactstrap'
 import './CSS/Blog.css';
 
-
+//tampilan homepage
 
 function HomePage() {
     return (
