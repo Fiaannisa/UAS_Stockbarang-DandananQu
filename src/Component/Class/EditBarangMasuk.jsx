@@ -7,17 +7,19 @@ import { Container, Col, Row, Form, FormGroup, Alert, Label, Input, Button } fro
 
 const api = "http://localhost:3001"
 
-class EditComp extends PureComponent {
+class EditBarangMasuk extends PureComponent {
     constructor(props) {
         super(props)
 
         this.state = {
+            no_notamasuk: this.props.location.state.no_notamasuk,
+            tanggal: this.props.location.state.tanggal,
+            nama_distributor: this.props.location.state.nama_distributor,
             id_barang: this.props.location.state.id_barang,
-            kode_barang: this.props.location.state.kode_barang,
             merk: this.props.location.state.merk,
             kategori: this.props.location.state.kategori,
             nama_barang: this.props.location.state.nama_barang,
-            stock: this.props.location.state.stock,
+            jumlah: this.props.location.state.jumlah,
             harga_persatuan: this.props.location.state.harga_persatuan,
             response: '',
             display: 'none'
@@ -28,18 +30,20 @@ class EditComp extends PureComponent {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-    ubahBarang = (idbrg) => {
+    ubahBarangmasuk = (nnotamsk) => {
         const data = qs.stringify({
-            id_barang: idbrg,
-            kode_barang: this.state.kode_barang,
+            no_notamasuk: nnotamsk,
+            tanggal: this.state.tanggal,
+            nama_distributor: this.state.nama_distributor,
+            id_barang: this.state.id_barang,
             merk: this.state.merk,
             kategori: this.state.kategori,
             nama_barang: this.state.nama_barang,
-            stock: this.state.stock,
+            jumlah: this.state.jumlah,
             harga_persatuan: this.state.harga_persatuan
         });
 
-        axios.put(api + '/ubahbarang', data)
+        axios.put(api + '/ubahbarangmasuk', data)
             .then(json => {
                 if (json.data.status === 200) {
                     console.log(json.data.status);
@@ -60,17 +64,41 @@ class EditComp extends PureComponent {
     render() {
         return (
             <Container>
-                <h4 className="headerbarang">FORM UPDATE DATA BARANG</h4>
-                <Alert color="succes" style={{ display: this.state.display }}>
+                <h4 className="headerbarang">FORM UPDATE DATA BARANG MASUK</h4>
+                <Alert className="form" color="warning" style={{ display: this.state.display }}>
                     {this.state.response}
                 </Alert>
                 <Form className="form">
                     <Col>
-                        <Label>KODE BARANG</Label>
+                        <Label>NOMOR NOTA BARANG MASUK</Label>
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Input type="text" name="kode_barang" value={this.state.kode_barang} onChange={this.handleChange} placeholder="KODE BARANG" />
+                                    <Input type="text" name="no_notamasuk" value={this.state.no_notamasuk} onChange={this.handleChange} placeholder="NOMOR NOTA BARANG MASUK" />
+                                </Col>
+                            </Row>
+                        </FormGroup>
+                        <Label>TANGGAL</Label>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Input type="text" name="tanggal" value={this.state.tanggal} onChange={this.handleChange} placeholder="TANGGAL" />
+                                </Col>
+                            </Row>
+                        </FormGroup>
+                        <Label>NAMA DISTRIBUTOR</Label>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Input type="text" name="nama_distributor" value={this.state.nama_distributor} onChange={this.handleChange} placeholder="NAMA DISTRIBUTOR" />
+                                </Col>
+                            </Row>
+                        </FormGroup>
+                        <Label>ID BARANG</Label>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Input type="text" name="id_barang" value={this.state.id_barang} onChange={this.handleChange} placeholder="ID BARANG" />
                                 </Col>
                             </Row>
                         </FormGroup>
@@ -98,11 +126,11 @@ class EditComp extends PureComponent {
                                 </Col>
                             </Row>
                         </FormGroup>
-                        <Label>STOCK</Label>
+                        <Label>JUMLAH</Label>
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Input type="text" name="stock" value={this.state.stock} onChange={this.handleChange} placeholder="STOCK" />
+                                    <Input type="text" name="jumlah" value={this.state.jumlah} onChange={this.handleChange} placeholder="JUMLAH" />
                                 </Col>
                             </Row>
                         </FormGroup>
@@ -114,11 +142,10 @@ class EditComp extends PureComponent {
                                 </Col>
                             </Row>
                         </FormGroup>
-
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Button color="warning" type="button" onClick={() => this.ubahBarang(this.state.id_barang)}>Update</Button>
+                                    <Button color="warning" type="button" onClick={() => this.ubahBarangmasuk(this.state.no_notamasuk)}>Update</Button>
                                 </Col>
                             </Row>
                         </FormGroup>
@@ -131,4 +158,4 @@ class EditComp extends PureComponent {
     }
 }
 
-export default EditComp
+export default EditBarangMasuk

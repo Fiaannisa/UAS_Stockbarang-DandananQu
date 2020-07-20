@@ -7,18 +7,19 @@ import { Container, Col, Row, Form, FormGroup, Alert, Label, Input, Button } fro
 
 const api = "http://localhost:3001"
 
-class EditComp extends PureComponent {
+class EditKaryawan extends PureComponent {
     constructor(props) {
         super(props)
 
         this.state = {
-            id_barang: this.props.location.state.id_barang,
-            kode_barang: this.props.location.state.kode_barang,
-            merk: this.props.location.state.merk,
-            kategori: this.props.location.state.kategori,
-            nama_barang: this.props.location.state.nama_barang,
-            stock: this.props.location.state.stock,
-            harga_persatuan: this.props.location.state.harga_persatuan,
+            id_karyawan: this.props.location.state.id_karyawan,
+            nik: this.props.location.state.nik,
+            nama: this.props.location.state.nama,
+            email: this.props.location.state.email,
+            jenis_kelamin: this.props.location.state.jenis_kelamin,
+            jabatan: this.props.location.state.jabatan,
+            alamat: this.props.location.state.alamat,
+            password: this.props.location.state.password,
             response: '',
             display: 'none'
         }
@@ -28,18 +29,19 @@ class EditComp extends PureComponent {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-    ubahBarang = (idbrg) => {
+    ubahkaryawan = (idkyr) => {
         const data = qs.stringify({
-            id_barang: idbrg,
-            kode_barang: this.state.kode_barang,
-            merk: this.state.merk,
-            kategori: this.state.kategori,
-            nama_barang: this.state.nama_barang,
-            stock: this.state.stock,
-            harga_persatuan: this.state.harga_persatuan
+            id_karyawan: idkyr,
+            nik: this.state.nik,
+            nama: this.state.nama,
+            email: this.state.email,
+            jenis_kelamin: this.state.jenis_kelamin,
+            jabatan: this.state.jabatan,
+            alamat: this.state.alamat,
+            password: this.state.password,
         });
 
-        axios.put(api + '/ubahbarang', data)
+        axios.put(api + '/ubahkaryawan', data)
             .then(json => {
                 if (json.data.status === 200) {
                     console.log(json.data.status);
@@ -60,65 +62,72 @@ class EditComp extends PureComponent {
     render() {
         return (
             <Container>
-                <h4 className="headerbarang">FORM UPDATE DATA BARANG</h4>
-                <Alert color="succes" style={{ display: this.state.display }}>
+                <h4 className="headerbarang">FORM UPDATE DATA KARYAWAN</h4>
+                <Alert className="form" color="warning" style={{ display: this.state.display }}>
                     {this.state.response}
                 </Alert>
                 <Form className="form">
                     <Col>
-                        <Label>KODE BARANG</Label>
+                        <Label>NIK</Label>
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Input type="text" name="kode_barang" value={this.state.kode_barang} onChange={this.handleChange} placeholder="KODE BARANG" />
+                                    <Input type="text" name="nik" value={this.state.nik} onChange={this.handleChange} placeholder="NIK" />
                                 </Col>
                             </Row>
                         </FormGroup>
-                        <Label>MERK</Label>
+                        <Label>NAMA</Label>
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Input type="text" name="merk" value={this.state.merk} onChange={this.handleChange} placeholder="MERK" />
+                                    <Input type="text" name="nama" value={this.state.nama} onChange={this.handleChange} placeholder="NAMA" />
                                 </Col>
                             </Row>
                         </FormGroup>
-                        <Label>KATEGORI</Label>
+                        <Label>E-MAIL</Label>
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Input type="text" name="kategori" value={this.state.kategori} onChange={this.handleChange} placeholder="KATEGORI" />
+                                    <Input type="text" name="email" value={this.state.email} onChange={this.handleChange} placeholder="EMAIL" />
                                 </Col>
                             </Row>
                         </FormGroup>
-                        <Label>NAMA BARANG</Label>
+                        <Label>JENIS KELAMIN</Label>
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Input type="text" name="nama_barang" value={this.state.nama_barang} onChange={this.handleChange} placeholder="NAMA BARANG" />
+                                    <Input type="text" name="jenis_kelamin" value={this.state.jenis_kelamin} onChange={this.handleChange} placeholder="JENIS KELAMIN" />
                                 </Col>
                             </Row>
                         </FormGroup>
-                        <Label>STOCK</Label>
+                        <Label>JABATAN</Label>
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Input type="text" name="stock" value={this.state.stock} onChange={this.handleChange} placeholder="STOCK" />
+                                    <Input type="text" name="jabatan" value={this.state.jabatan} onChange={this.handleChange} placeholder="JABATAN" />
                                 </Col>
                             </Row>
                         </FormGroup>
-                        <Label>HARGA PERSATUAN</Label>
+                        <Label>ALAMAT</Label>
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Input type="text" name="harga_persatuan" value={this.state.harga_persatuan} onChange={this.handleChange} placeholder="HARGA PERSATUAN" />
+                                    <Input type="text" name="alamat" value={this.state.alamat} onChange={this.handleChange} placeholder="ALAMAT" />
                                 </Col>
                             </Row>
                         </FormGroup>
-
+                        <Label>PASSWORD</Label>
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Button color="warning" type="button" onClick={() => this.ubahBarang(this.state.id_barang)}>Update</Button>
+                                    <Input type="text" name="password" value={this.state.password} onChange={this.handleChange} placeholder="PASSWORD" />
+                                </Col>
+                            </Row>
+                        </FormGroup>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Button color="warning" type="button" onClick={() => this.ubahkaryawan(this.state.id_karyawan)}>Update</Button>
                                 </Col>
                             </Row>
                         </FormGroup>
@@ -130,5 +139,4 @@ class EditComp extends PureComponent {
         )
     }
 }
-
-export default EditComp
+export default EditKaryawan

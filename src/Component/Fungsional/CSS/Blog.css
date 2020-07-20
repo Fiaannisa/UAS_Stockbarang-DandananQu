@@ -11,3 +11,112 @@
     width: 300px;
     height: 200px;
 }
+
+.blog-wrap{
+    width: 300px;
+    display: inline-block;
+    height: auto;
+    border: 1px solid gray;
+    padding: 10px;
+    margin: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.home-1{
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  font-size: 50pt;
+  color: orange;
+}
+
+.mr-auto{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.homeblog{
+    width:1300px;
+    height: 470px;    
+}
+
+.homeblognavbar{
+    width:50px;
+    height: 50px;
+    align-content: center;
+}
+.navbar{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: pink;
+    
+}
+
+.welcome{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 60px;
+    font-weight: bold;
+    color:lightcoral;
+}
+
+.fia{
+    text-align: right;
+    font-family: 'Times New Roman', Times, serif;
+    color: grey;
+}
+
+.AboutComp{
+  width: 500pt;
+  height: 500pt;
+  align-content: center;
+  
+}
+
+.about{
+    background-color:lightblue;
+}
+
+
+.cardDandannaQu{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.isi{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: justify;
+    color: lightcoral;
+}
+
+.button{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+}
+.p{
+    background-color: whitesmoke;
+}
+
+.home{
+    width:1000px;
+    height: 350px;      
+}
+
+.username{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.username2{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: lightcoral
+}
+
+.isi{
+    text-align: justify;
+    color: lightcoral;
+}
+

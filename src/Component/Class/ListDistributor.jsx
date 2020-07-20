@@ -3,35 +3,34 @@ import axios from 'axios'
 import qs from 'querystring'
 import { Table, Button, Container, NavLink, Alert } from 'reactstrap'
 import { Link } from 'react-router-dom'
-import './CSS/barang.css';
 
 const api = 'http://localhost:3001'
 
-class ListComp extends PureComponent {
+class ListDistributor extends PureComponent {
     constructor(props) {
         super(props)
         this.state = {
-            barang: [],
+            distributor: [],
             response: '',
             diaplay: 'none'
-        
+
         }
     }
     componentDidMount() {
-        axios.get(api + '/tampil').then(res => {
+        axios.get(api + '/tampildis').then(res => {
             this.setState({
-                barang: res.data.values
+                distributor: res.data.values
             })
         })
     }
 
-    Deletebarang = (idbrg) => {
-        const { barang } = this.state
+    Deletedistributor = (iddst) => {
+        const { distributor } = this.state
         const data = qs.stringify({
-            id_barang: idbrg
+            id_distributor: iddst
         })
 
-        axios.delete(api + '/hapus',
+        axios.delete(api + '/hapusdistributor',
             {
                 data: data,
                 headers: { 'Content-type': 'application/x-www-form-urlencoded' }
@@ -41,17 +40,17 @@ class ListComp extends PureComponent {
                 console.log(json.data.status);
                 this.setState({
                     response: json.data.values,
-                    barang: barang.filter(barang => barang.id_barang !== idbrg),
+                    distributor: distributor.filter(distributor => distributor.id_distributor !== iddst),
                     display: 'block'
                 })
-                this.props.history.push('/barang')
+                this.props.history.push('/distributor')
             } else {
                 this.setState({
                     response: json.data.values,
-                    barang: barang.filter(barang => barang.id_barang !== idbrg),
+                    distributor: distributor.filter(distributor => distributor.id_distributor !== iddst),
                     display: 'block'
                 })
-
+                //this.props.history.push('/mahasiswa')
             }
         });
     }
@@ -59,54 +58,50 @@ class ListComp extends PureComponent {
     render() {
         return (
             <Container>
-                <h2 className="headerbarang">DAFTAR PRODUK</h2>
+                <h2 className="headerbarang">DATA DISTRIBUTOR</h2>
                 <Alert className="form" color="warning" style={{ display: this.state.display }}>
                     {this.state.response}
                 </Alert>
-                <NavLink href="/barang/tambah"><Button className="tabelbarang" color="primary">TAMBAH DATA BARANG</Button></NavLink>
+                <NavLink href="/distributor/tambah"><Button className="tabelbarang" color="primary">TAMBAH DATA DISTRIBUTOR</Button></NavLink>
+                <hr />
                 <hr />
                 <Table className="tabelbarang">
+
                     <thead>
                         <tr>
-                            <th>Kode Barang</th>
-                            <th>Merk</th>
-                            <th>Kategori</th>
-                            <th>Nama Barang</th>
-                            <th>Stock</th>
-                            <th>Harga Persatuan</th>
+                            <th>Kode Distributor</th>
+                            <th>Nama Distributor</th>
+                            <th>No.telp</th>
+                            <th>Alamat</th>
                             <th>Aksi</th>
                         </tr>
 
                     </thead>
                     <tbody>
-                        {this.state.barang.map(barang =>
-                            <tr key={barang.id_barang}>
-                                <td>{barang.kode_barang}</td>
-                                <td>{barang.merk}</td>
-                                <td>{barang.kategori}</td>
-                                <td>{barang.nama_barang}</td>
-                                <td>{barang.stock}</td>
-                                <td>{barang.harga_persatuan}</td>
+                        {this.state.distributor.map(distributor =>
+                            <tr key={distributor.id_distributor}>
+                                <td>{distributor.kode_distributor}</td>
+                                <td>{distributor.nama_distributor}</td>
+                                <td>{distributor.no_telp}</td>
+                                <td>{distributor.alamat}</td>
                                 <td>
                                     <Link to=
                                         {
                                             {
-                                                pathname: '/barang/edit',
+                                                pathname: '/distributor/edit',
                                                 state: {
-                                                    id_barang: barang.id_barang,
-                                                    kode_barang: barang.kode_barang,
-                                                    merk: barang.merk,
-                                                    kategori: barang.kategori,
-                                                    nama_barang: barang.nama_barang,
-                                                    stock: barang.stock,
-                                                    harga_persatuan: barang.harga_persatuan
+                                                    id_distributor: distributor.id_distributor,
+                                                    kode_distributor: distributor.kode_distributor,
+                                                    nama_distributor: distributor.nama_distributor,
+                                                    no_telp: distributor.no_telp,
+                                                    alamat: distributor.alamat
                                                 }
                                             }
                                         }>
                                         <Button color="warning">Edit</Button>
                                     </Link>
                                     <span> </span>
-                                    <Button onClick={() => this.Deletebarang(barang.id_barang)} color="primary">Hapus</Button>
+                                    <Button onClick={() => this.Deletedistributor(distributor.id_distributor)} color="primary">Hapus</Button>
                                 </td>
                             </tr>
                         )}
@@ -118,4 +113,5 @@ class ListComp extends PureComponent {
     }
 }
 
-export default ListComp
+
+export default ListDistributor

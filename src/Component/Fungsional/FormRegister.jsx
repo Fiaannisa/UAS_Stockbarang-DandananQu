@@ -5,16 +5,17 @@ import { Link } from 'react-router-dom'
 
 const api = 'http://localhost:3001'
 
-class TambahComp extends PureComponent {
+class FormRegister extends PureComponent {
     constructor(props) {
         super(props)
         this.state = {
-            kode_barang: '',
-            merk: '',
-            kategori: '',
-            nama_barang: '',
-            stock: '',
-            harga_persatuan: '',
+            nik: '',
+            nama: '',
+            email: '',
+            jenis_kelamin: '',
+            jabatan: '',
+            alamat: '',
+            password: '',
             response: '',
             display: 'none'
 
@@ -25,14 +26,15 @@ class TambahComp extends PureComponent {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-    Addbarang = () => {
-        axios.post(api + '/tambahbarang', {
-            kode_barang: this.state.kode_barang,
-            merk: this.state.merk,
-            kategori: this.state.kategori,
-            nama_barang: this.state.nama_barang,
-            stock: this.state.stock,
-            harga_persatuan: this.state.harga_persatuan,
+    Addkaryawan = () => {
+        axios.post(api + '/tambahkaryawan', {
+            nik: this.state.nik,
+            nama: this.state.nama,
+            email: this.state.email,
+            jenis_kelamin: this.state.jenis_kelamin,
+            jabatan: this.state.jabatan,
+            alamat: this.state.alamat,
+            password: this.state.password,
         }).then(json => {
             if (json.data.status === 200) {
                 this.setState({
@@ -51,62 +53,73 @@ class TambahComp extends PureComponent {
     render() {
         return (
             <Container>
-                <h4 className="headerbarang">DATA BARANG BARU</h4>
+                <h4 className="headerbarang">FORM REGISTRASI KARYAWAN BARU</h4>
                 <Alert color="succes" style={{ display: this.state.display }}>
                     {this.state.response}
                 </Alert>
                 <Form className="form">
                     <Col>
-                        <Label>KODE BARANG</Label>
+                        <Label>NIK</Label>
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Input type="text" name="kode_barang" value={this.state.kode_barang} onChange={this.handleChange} placeholder="KODE BARANG" />
+                                    <Input type="text" name="nik" value={this.state.nik} onChange={this.handleChange} placeholder="MASUKKAN NIK" />
                                 </Col>
                             </Row>
                         </FormGroup>
-                        <Label>MERK</Label>
+                        <Label>NAMA</Label>
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Input type="text" name="merk" value={this.state.merk} onChange={this.handleChange} placeholder="MERK" />
+                                    <Input type="text" name="nama" value={this.state.nama} onChange={this.handleChange} placeholder="MASUKKAN NAMA" />
                                 </Col>
                             </Row>
                         </FormGroup>
-                        <Label>KATEGORI</Label>
+                        <Label>E-MAIL</Label>
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Input type="text" name="kategori" value={this.state.kategori} onChange={this.handleChange} placeholder="KATEGORI" />
+                                    <Input type="text" name="email" value={this.state.email} onChange={this.handleChange} placeholder="MASUKKAN E-MAIL" />
                                 </Col>
                             </Row>
                         </FormGroup>
-                        <Label>NAMA BARANG</Label>
+                        <Label>JENIS KELAMIN</Label>
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Input type="text" name="nama_barang" value={this.state.nama_barang} onChange={this.handleChange} placeholder="NAMA BARANG" />
+                                    <Input type="text" name="jenis_kelamin" value={this.state.jenis_kelamin} onChange={this.handleChange} placeholder="MASUKKAN JENIS KELAMIN" />
                                 </Col>
                             </Row>
                         </FormGroup>
-                        <Label>STOCK</Label>
+                        <Label>JABATAN</Label>
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Input type="text" name="stock" value={this.state.stock} onChange={this.handleChange} placeholder="STOCK" />
+                                    <Input type="text" name="jabatan" value={this.state.jabatan} onChange={this.handleChange} placeholder="MASUKKAN JABATAN" />
                                 </Col>
                             </Row>
                         </FormGroup>
-                        <Label>HARGA PERSATUAN</Label>
+                        <Label>ALAMAT</Label>
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Input type="text" name="harga_persatuan" value={this.state.harga_persatuan} onChange={this.handleChange} placeholder="HARGA PERSATUAN" />
+                                    <Input type="text" name="alamat" value={this.state.alamat} onChange={this.handleChange} placeholder="MASUKKAN ALAMAT" />
                                 </Col>
                             </Row>
                         </FormGroup>
+                        <Label>PASSWORD</Label>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Input type="text" name="password" value={this.state.password} onChange={this.handleChange} placeholder="MASUKKAN PASSWORD" />
+                                </Col>
+                            </Row>
+                        </FormGroup>
+
                         <Col>
-                            <Button color="danger" type="button" onClick={this.Addbarang}>SUBMIT</Button>
+                            <Button color="danger" type="button" onClick={this.Addkaryawan}>SUBMIT</Button>
+                            <span>    </span>
+                            <Button color="danger" type="button" href="/" >LOGIN</Button>
                         </Col>
                     </Col>
                 </Form>
@@ -118,4 +131,4 @@ class TambahComp extends PureComponent {
     }
 }
 
-export default TambahComp
+export default FormRegister
