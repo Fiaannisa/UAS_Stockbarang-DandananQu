@@ -15,6 +15,8 @@ import {
   NavbarText
 } from 'reactstrap';
 
+//tampilan navbar
+
 const NavbarComp = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
