@@ -11,11 +11,10 @@ function CardComp(props) {
         <div>
             <CardDeck>
             <Card>
-                
+
                 <CardBody>
-                    <CardTitle><h3>{props.judul}</h3></CardTitle>
-                    <CardSubtitle>{props.tanggal}</CardSubtitle>
-                    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+
+                    <CardText>bhnmmjuefjhfncsuydufhuwsSome quick example text to build on the card title and make up the bulk of the card's content.</CardText>
                     <Button>
                         <Link to={
                             {
