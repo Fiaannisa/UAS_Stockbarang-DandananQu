@@ -5,7 +5,7 @@ import { Table, Button, Container, NavLink, Alert } from 'reactstrap'
 import { Link } from 'react-router-dom'
 
 const api = 'http://localhost:3001'
-
+//tampilan list distributor
 class ListDistributor extends PureComponent {
     constructor(props) {
         super(props)
