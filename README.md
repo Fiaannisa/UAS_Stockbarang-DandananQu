@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,3 +67,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+=======
+# UAS_Stockbarang-DandananQu
+PROJECT UAS MEMBUAT APLIKASI WEBSITE STOCK BARANG PADA DandananQu
+>>>>>>> ef2546a75f828b12ef40835f54e89a2fdbab4f17
