@@ -3,6 +3,8 @@ import { Button, Container, Col, Alert, Row, Form, FormGroup, Label, Input, Card
 import './CSS/Blog.css';
 import username from '../Fungsional/tentang';
 
+//Form Login
+
 class FormLogin extends PureComponent {
     constructor(props) {
         super(props)
