@@ -4,7 +4,7 @@ import qs from 'querystring'
 import { Link } from 'react-router-dom'
 import { Container, Col, Row, Form, FormGroup, Alert, Label, Input, Button } from 'reactstrap'
 
-
+//tampilan edit barang keluar
 const api = "http://localhost:3001"
 
 class EditBarangKeluar extends PureComponent {
