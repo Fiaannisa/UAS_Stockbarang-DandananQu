@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import './CSS/barang.css';
 
 const api = 'http://localhost:3001'
-
+//tampil berdasarkan merk-revlon
 class Revlon extends PureComponent {
     constructor(props) {
         super(props)
