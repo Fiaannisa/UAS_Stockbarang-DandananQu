@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { CardBody, Col, Alert, Row, Form, FormGroup, Label, Input, Card, CardTitle, CardImg, NavLink, NavItem, Nav } from 'reactstrap'
 import './CSS/Blog.css';
 
-
+//tampilan tentang web
 function tentang() {
     return (
         
