@@ -3,7 +3,7 @@ import { Button, Container, Col, Alert, Row, Form, FormGroup, Label, Input, Card
 import './CSS/Blog.css';
 import username from '../Fungsional/tentang';
 
-//Form Login
+//Form Login admin gudang
 
 class FormLogin extends PureComponent {
     constructor(props) {
