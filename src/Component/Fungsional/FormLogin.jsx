@@ -6,21 +6,6 @@ import username from '../Fungsional/tentang';
 //Form Login admin gudang
 
 class FormLogin extends PureComponent {
-    constructor(props) {
-        super(props)
-        this.state = {
-            email: '',
-            password: '',
-            response: '',
-            display: 'none'
-
-        }
-    }
-
-    handleChange = (e) => {
-        this.setState({ [e.target.name]: e.target.value })
-    }
-
 render() {
     return (
 
@@ -32,7 +17,7 @@ render() {
             <FormGroup className="username">
                 <Row>
                     <Col>
-                        <Input className="username" name="username" type="text" value={this.state.email} onChange={this.handleChange} placeholder="Masukkan Username" />
+                        <Input className="username" name="username" type="text" onChange={this.handleChange} placeholder="Masukkan Username" />
                         <div>
                             <username name="username" />
                         </div>
@@ -44,7 +29,7 @@ render() {
             <FormGroup>
                 <Row>
                     <Col>
-                        <Input className="username" type="text" value={this.state.password} onChange={this.handleChange} placeholder="Masukkan Password" />
+                        <Input className="username" type="text"  onChange={this.handleChange} placeholder="Masukkan Password" />
                     </Col>
                 </Row>
             </FormGroup>
