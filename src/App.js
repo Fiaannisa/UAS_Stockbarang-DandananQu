@@ -64,6 +64,7 @@ const App = () => {
         <Route exact path="/profil/karyawan/edit" component={EditKaryawan} />
         <Route exact path="/profil/tambahkaryawan" component={FormRegister} />
         <Route exact path="/tentangdandananqu" component={tentang} />
+        <Route exact path="/logout" component={FormLogin} />
       </Switch>
     </BrowserRouter>
 
