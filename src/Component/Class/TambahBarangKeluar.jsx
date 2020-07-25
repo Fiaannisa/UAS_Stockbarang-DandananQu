@@ -54,7 +54,7 @@ class TambahBarangKeluar extends PureComponent {
         return (
             <Container>
                 <h4 className="headerbarang">FORM DATA BARU KELUAR</h4>
-                <Alert color="succes" style={{ display: this.state.display }}>
+                <Alert className="form" color="warning" style={{ display: this.state.display }}>
                     {this.state.response}
                 </Alert>
                 <Form className="form">

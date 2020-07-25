@@ -59,7 +59,7 @@ class ListBrgKeluar extends PureComponent {
         return (
             <Container>
                 <h2 className="headerbarang">DATA BARANG KELUAR</h2>
-                <Alert color="warning" style={{ display: this.state.display }}>
+                <Alert className="form" color="warning" style={{ display: this.state.display }}>
                     {this.state.response}
                 </Alert>
                 <NavLink href="/transaksi/barangkeluar/tambah"><Button className="tabelbarang" color="primary">TAMBAH DATA BARANG KELUAR</Button></NavLink>

@@ -4,6 +4,7 @@ import qs from 'querystring'
 import { Link } from 'react-router-dom'
 import { Container, Col, Row, Form, FormGroup, Alert, Label, Input, Button } from 'reactstrap'
 
+import './CSS/barang.css';
 
 const api = "http://localhost:3001"
 //tampilan Edit Komponen/Barang
@@ -61,7 +62,7 @@ class EditComp extends PureComponent {
         return (
             <Container>
                 <h4 className="headerbarang">FORM UPDATE DATA BARANG</h4>
-                <Alert color="succes" style={{ display: this.state.display }}>
+                <Alert className="form" color="warning" style={{ display: this.state.display }}>
                     {this.state.response}
                 </Alert>
                 <Form className="form">

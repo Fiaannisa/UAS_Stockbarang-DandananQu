@@ -61,7 +61,7 @@ class EditBarangKeluar extends PureComponent {
         return (
             <Container>
                 <h4 className="headerbarang">FORM UPDATE DATA BARANG KELUAR</h4>
-                <Alert color="warning" style={{ display: this.state.display }}>
+                <Alert className="form" color="warning" style={{ display: this.state.display }}>
                     {this.state.response}
                 </Alert>
                 <Form className="form">

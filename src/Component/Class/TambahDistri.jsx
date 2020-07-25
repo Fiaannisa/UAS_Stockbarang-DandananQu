@@ -48,7 +48,7 @@ class TambahDistri extends PureComponent {
         return (
             <Container>
                 <h4 className="headerbarang">DATA DISTRIBUTOR BARU</h4>
-                <Alert color="succes" style={{ display: this.state.display }}>
+                <Alert className="form" color="warning" style={{ display: this.state.display }}>
                     {this.state.response}
                 </Alert>
                 <Form className="form">
